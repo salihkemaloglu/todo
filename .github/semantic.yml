@@ -1,0 +1,4 @@
+# Require at least one commit to be valid
+# this is only relevant when using commitsOnly: true or titleAndCommits: true,
+# which validate all commits by default
+commitsOnly: true
