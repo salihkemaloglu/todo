@@ -1,0 +1,9 @@
+---
+env:
+  name: DEV
+
+postgres:
+  database_url: 'postgres://agflow:agflow@localhost:5432/todo?sslmode=disable'
+
+service:
+  port: ':9090'
