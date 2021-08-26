@@ -4,19 +4,22 @@ package config
 type Config struct {
 	Postgres      Postgres      `yaml:"postgres"`
 	Service       Service       `yaml:"service"`
+	Queue         Queue         `yaml:"queue"`
 	OnlineService OnlineService `yaml:"online_service"`
 }
 
-// Postgres represents postgresql db config
 type Postgres struct {
 	DatabaseURL string `yaml:"database_url"`
 }
 
-// Service represents ports configs
 type Service struct {
 	Port string `yaml:"port"`
 }
 
 type OnlineService struct {
-	BaseURL string `yaml:"base_url"`
+	URL string `yaml:"url"`
+}
+
+type Queue struct {
+	URL string `yaml:"url"`
 }
