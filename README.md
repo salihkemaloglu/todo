@@ -28,6 +28,9 @@ According to task steps, the below steps should be run.
    go mod download
    ```
 3. Run migration file:
+   - To run migration file and database processes, the Database URL need to be set as the local `PostgreSQL` connection URL in `config.yml` and `.env` files.
+   <br />
+  
    ```
    dbmate up
    ```
