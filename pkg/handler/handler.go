@@ -11,8 +11,3 @@ type Handler struct {
 func NewHandler(conf *config.Config) *Handler {
 	return &Handler{config: conf}
 }
-
-// Message example
-type Message struct {
-	Message string `json:"message" example:"message"`
-}

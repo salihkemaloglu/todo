@@ -7,3 +7,6 @@ postgres:
 
 service:
   port: ':9090'
+
+online_service:
+  base_url: 'http://localhost:9010/objects/'
