@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/salihkemaloglu/todo/pkg/agenc"
 	"github.com/salihkemaloglu/todo/pkg/command"
-	"github.com/salihkemaloglu/todo/pkg/util/config"
+	"github.com/salihkemaloglu/todo/pkg/config"
 	"github.com/spf13/cobra"
 )
 
@@ -29,6 +29,7 @@ func main() {
 
 	cmd.AddCommand(
 		command.NewAPIRun(&config),
+		command.NewConsumerRun(&config),
 	)
 
 	if err := cmd.Execute(); err != nil {

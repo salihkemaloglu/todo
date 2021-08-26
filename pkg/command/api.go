@@ -2,8 +2,8 @@ package command
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/salihkemaloglu/todo/pkg/config"
 	"github.com/salihkemaloglu/todo/pkg/handler"
-	"github.com/salihkemaloglu/todo/pkg/util/config"
 	"github.com/spf13/cobra"
 )
 

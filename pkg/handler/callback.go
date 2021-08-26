@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -16,9 +16,9 @@ func (h *Handler) Callback(ctx *gin.Context) {
 		return
 	}
 
-	err := service.Callback(o, h.config)
+	err := service.Send(o, h.config)
 	if err != nil {
-		fmt.Println(err)
+		log.Printf("%s", err)
 		ctx.JSON(http.StatusInternalServerError, err.Error())
 		return
 	}
