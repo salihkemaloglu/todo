@@ -1,13 +1,27 @@
 package handler
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/salihkemaloglu/todo/pkg/model"
 	"github.com/salihkemaloglu/todo/pkg/service"
 )
 
 func (h *Handler) Callback(ctx *gin.Context) {
-	service.Callback(h.config)
-	ctx.JSON(http.StatusOK, "response")
+	var o model.Object
+	if err := ctx.ShouldBindJSON(&o); err != nil {
+		ctx.JSON(http.StatusBadRequest, err.Error())
+		return
+	}
+
+	err := service.Callback(o, h.config)
+	if err != nil {
+		fmt.Println(err)
+		ctx.JSON(http.StatusInternalServerError, err.Error())
+		return
+	}
+
+	ctx.JSON(http.StatusOK, "OK")
 }

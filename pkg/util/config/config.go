@@ -2,8 +2,9 @@ package config
 
 // Config is the general configuration structure.
 type Config struct {
-	Postgres Postgres `yaml:"postgres"`
-	Service  Service  `yaml:"service"`
+	Postgres      Postgres      `yaml:"postgres"`
+	Service       Service       `yaml:"service"`
+	OnlineService OnlineService `yaml:"online_service"`
 }
 
 // Postgres represents postgresql db config
@@ -14,4 +15,8 @@ type Postgres struct {
 // Service represents ports configs
 type Service struct {
 	Port string `yaml:"port"`
+}
+
+type OnlineService struct {
+	BaseURL string `yaml:"base_url"`
 }
